@@ -1,5 +1,5 @@
 
-	$( document ).ready(function(){
+		$( document ).ready(function(){
 
 		//Randomizers
 		var random=Math.floor(Math.random()*102+19)
@@ -7,16 +7,16 @@
 		$('#goal').text(random);
 
 		function reset(){
-			random=Math.floor(Math.random()*102+19);
-			console.log(random)
-			$('#goal').text(random);
-			red= Math.floor(Math.random()*12+1);
-			blue= Math.floor(Math.random()*12+1);
-			green= Math.floor(Math.random()*12+1);
-			purple= Math.floor(Math.random()*12+1);
-			playerAmount= 0;
-			$('#playerAmount').text(playerAmount);
-			} 
+		random=Math.floor(Math.random()*102+19);
+		console.log(random)
+		$('#goal').text(random);
+		red= Math.floor(Math.random()*12+1);
+		blue= Math.floor(Math.random()*12+1);
+		green= Math.floor(Math.random()*12+1);
+		purple= Math.floor(Math.random()*12+1);
+		playerAmount= 0;
+		$('#playerAmount').text(playerAmount);
+		} 
 		
 		var red= Math.floor(Math.random()*12+1)
 		var blue= Math.floor(Math.random()*12+1)
@@ -49,7 +49,7 @@
 		playerAmount = playerAmount + red;
 		$('#playerAmount').text(playerAmount); 
 		
-			//Rules
+		//Rules
 		if (playerAmount == random){
 		win();
 		}
