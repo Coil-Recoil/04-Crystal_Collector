@@ -1,0 +1,23 @@
+
+.counters {
+    position: absolute;
+    left: 0;
+    top: 70%;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    background-color: black;
+    color: white;
+    background: rgba(0, 0, 0, 0.479);
+    border-color: 15px solid black;
+    }
+    
+body {
+     background-image: url("../images/Kokiri_Shop.png");
+     background-position: center center;
+     background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: auto;
+    color: white;   
+}

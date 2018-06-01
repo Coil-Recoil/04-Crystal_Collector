@@ -1,49 +1,97 @@
-$(document).ready(function() {
-   
-    var playerScore = playerScoreRandom()
-	var crystalOneValue = crystalRandom()
-	var crystalTwoValue = crystalRandom()
-	var crystalThreeValue = crystalRandom()
-	var crystalFourValue = crystalRandom()
-	var totalCrystalValue = 0
-	
-	
-	//random value 19-120 for target.
-	function playerScoreRandom(min, max) {
-	return Math.floor(Math.random() * (120 - 19 + 1)) + 19;
-	}
-	
-	//random value 1-12 for crystals.
-	
-	function crystalRandom(min, max) {
-	return Math.floor(Math.random() * (12 - 1 + 1)) + 1;
-	}
+
+	$( document ).ready(function(){
+
+		//Randomizers
+		var random=Math.floor(Math.random()*102+19)
 		
-	console.log(parseInt(crystalOneValue) + parseInt(crystalTwoValue))
-	
-	console.log(crystalOneValue);
-	console.log(crystalTwoValue);
-	console.log(crystalThreeValue);
-	console.log(crystalFourValue);
-	console.log("-------------")
-	console.log(playerScore)
-	
-	
-	
-	}) 
+		$('#goal').text(random);
 
-/*1. make array of random numbers (19-120)
+		function reset(){
+			random=Math.floor(Math.random()*102+19);
+			console.log(random)
+			$('#goal').text(random);
+			red= Math.floor(Math.random()*12+1);
+			blue= Math.floor(Math.random()*12+1);
+			green= Math.floor(Math.random()*12+1);
+			purple= Math.floor(Math.random()*12+1);
+			playerAmount= 0;
+			$('#playerAmount').text(playerAmount);
+			} 
+		
+		var red= Math.floor(Math.random()*12+1)
+		var blue= Math.floor(Math.random()*12+1)
+		var green= Math.floor(Math.random()*12+1)
+		var purple= Math.floor(Math.random()*12+1)
+		
+		//Counters
+		var playerAmount= 0; 
+		var wins= 0;
+		var losses = 0;
+		
+	  $('#wins').text(wins);
+	  $('#losses').text(losses);
+	  
+	  function win(){
+	  alert("Winner!");
+		wins++; 
+		$('#wins').text(wins);
+		reset();
+		}
+		
+	  function loss(){
+	  alert ("Game Over!");
+		losses++;
+		$('#losses').text(losses);
+		reset()
+	  }
+		
+		$('.red').on ('click', function(){
+		playerAmount = playerAmount + red;
+		$('#playerAmount').text(playerAmount); 
+		
+			//Rules
+		if (playerAmount == random){
+		win();
+		}
+		else if ( playerAmount > random){
+		loss();
+		}   
+		})
 
-2. use math random to pick random number from array 
+		$('.blue').on ('click', function(){
+		playerAmount = playerAmount + blue;
+		$('#playerAmount').text(playerAmount); 
+		
+		if (playerAmount == random){
+		win();
+		}
+		else if ( playerAmount > random){
+		loss();
+		} 
+		})
 
-3. each four buttons html will link to javascript onclick events
+		$('.green').on ('click', function(){
+		playerAmount = playerAmount + green;
+		$('#playerAmount').text(playerAmount);
+	  
+		if (playerAmount == random){
+		win();
+		}
+		else if ( playerAmount > random){
+		loss();
+		} 
+		})
 
-4. each button is assigned a different value to represent a the points awarded (var blue = 100pts, var white = 200pts)
-
-5. if player score = target amount 
-	then win counter = +1 
-
-6. if player score > target amount
-	then loss counter = -1
-	then reset() function
+		$('.purple').on ('click', function(){
+		playerAmount = playerAmount + purple;
+		$('#playerAmount').text(playerAmount); 
+			
+		if (playerAmount == random){
+		win();
+		}
+		else if ( playerAmount > random){
+		loss();
+		}
+		});   
+	  }); 
 
